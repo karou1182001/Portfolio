@@ -1,109 +1,102 @@
-import { useEffect, useState } from "react"
-import {cn} from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react"; 
+
+// -----------------------------------------------------------------------------
+// Navigation items (single source of truth for links)
+// -----------------------------------------------------------------------------
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
+  { name: "Home",     href: "#hero" },
+  { name: "About",    href: "#about" },
+  { name: "Skills",   href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact",  href: "#contact" },
 ];
 
 // -----------------------------------------------------------------------------
-// Navbar component (placeholder)
-// For now it's just returning an empty <div>, but navItems can be mapped here
+// Navbar
 // -----------------------------------------------------------------------------
 export const Navbar = () => {
-  // State to track if navbar should have scrolled styles
+  // Visual state: compact header after scrolling
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen]= useState(false)
+  // UI state: mobile menu open/close
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // ---------------------------------------------------------------------------
-  // Effect: listen to window scroll and update state
-  // ---------------------------------------------------------------------------
+  // -- Effects ----------------------------------------------------------------
+  // Listen to scroll to toggle compact vs. relaxed header paddings/background
   useEffect(() => {
-    const handleScroll = () => {
-      // if scrolled more than 10px → activate scrolled state
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
-
-    // cleanup on unmount
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // cleanup
   }, []);
 
-  // ---------------------------------------------------------------------------
-  // Render: navbar container
-  // Fixed to top, full width, transition for smooth style changes
-  // ---------------------------------------------------------------------------
- return (
-  <nav
-    className={cn(
-      "fixed w-full z-40 transition-all duration-300",
-      isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
-    )}
-  >
-    <div className="container flex items-center justify-between">
-      <a
-        className=" text-xl font-bold text-primary flex items-center"
-        href="#hero"
-      >
-        <span className="relative z-10">
-          <span className="text-glow text-foreground">MariaTech</span>
-          <span className="ml-1">Portfolio</span>
-        </span>
-      </a>
-    
-
-
-    {/* desktop nav */}
-    <div className="hidden md:flex space-x-8">
-    {navItems.map((item, key) => (
-        <a
-        key={key}
-        href={item.href}
-        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-        >
-        {item.name}
+  // -- Render -----------------------------------------------------------------
+  return (
+    <nav
+      role="navigation"
+      aria-label="Main"
+      className={cn(
+        "fixed w-full z-40 transition-all duration-300",
+        // when scrolled: shrink padding, add blur + subtle shadow
+        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-sm" : "py-5"
+      )}
+    >
+      {/* Header row: logo, desktop nav, mobile toggle */}
+      <div className="container flex items-center justify-between">
+        {/* Brand / Logo */}
+        <a href="#hero" className="flex items-center text-xl font-bold text-primary" aria-label="Go to hero">
+          <span className="relative z-10">
+            <span className="text-glow text-foreground">MariaTech</span>
+            <span className="ml-1">Portfolio</span>
+          </span>
         </a>
-    ))}
-    </div>
 
-    {/* mobile nav */}
-    <button
-    onClick={() => setIsMenuOpen((prev) => !prev)}
-    className="md:hidden p-2 text-foreground z-50"
-    aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-    >
-    {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-    </button>
-
-    <div
-    className={cn(
-        "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-        "transition-all duration-300 md:hidden",
-        isMenuOpen
-        ? "opacity-100 pointer-events-auto"
-        : "opacity-0 pointer-events-none"
-    )}
-    >
-        <div className="flex flex-col space-y-8 text-xl">
-        {navItems.map((item, key) => (
+        {/* Desktop navigation (hidden on small screens) */}
+        <div className="hidden md:flex space-x-8">
+          {navItems.map((item, key) => (
             <a
-            key={key}
-            href={item.href}
-            className="text-foreground/80 hover:text-primary transition-colors duration-300"
-            onClick={()=> setIsMenuOpen(false)}
+              key={key}
+              href={item.href}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
-            {item.name}
+              {item.name}
             </a>
-        ))}
+          ))}
         </div>
-    </div>
 
-   </div>
-  </nav>
-);
+        {/* Mobile toggle (hamburger / close) */}
+        <button
+          onClick={() => setIsMenuOpen(prev => !prev)}
+          className="md:hidden p-2 text-foreground z-50 focus:outline-none"
+          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
+      {/* Mobile overlay menu (covers screen; fades in/out) */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+          "transition-all duration-300 md:hidden",
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        )}
+      >
+        <div className="flex flex-col space-y-8 text-xl">
+          {navItems.map((item, key) => (
+            <a
+              key={key}
+              href={item.href}
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
+              onClick={() => setIsMenuOpen(false)} // close menu after click
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
 };
