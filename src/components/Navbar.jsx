@@ -46,7 +46,7 @@ export const Navbar = () => {
         {/* Brand / Logo */}
         <a href="#hero" className="flex items-center text-xl font-bold text-primary" aria-label="Go to hero">
           <span className="relative z-10">
-            <span className="text-glow text-foreground">MariaTech</span>
+            <span className="text-glow text-foreground">Maria's</span>
             <span className="ml-1">Portfolio</span>
           </span>
         </a>
