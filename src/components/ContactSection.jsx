@@ -7,25 +7,58 @@ import { cn } from '@/lib/utils';
 import { useState } from "react";
 // React hook to manage component state
 
+const API_URL = "http://localhost:5000";
 
-// ==========================
-// Contact Section Component
-// ==========================
 export const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState({});
+    const formInitialDetails = {
+    name: "",
+    email: "",
+    message: "",
+   }
+  const [formDetails, setFormDetails] = useState(formInitialDetails);
 
-    // --------------------------
+  const onFormUpdate = (category, value) => {
+      setFormDetails({
+        ...formDetails,
+        [category]: value
+      })
+  }
+
     // Handle form submission
-    // --------------------------
-    const handleSubmit = (e) => {
-        e.preventDefault();          // Prevents page reload
-        setIsSubmitting(true);       // Shows "sending..." state
-        
-        // Simulated async action (like sending to server)
-        setTimeout(() => {
-            console.log("Envia");    // Logs a message in console
-            setIsSubmitting(false);  // Resets submit button state
-        }, 1500);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (isSubmitting) return;
+        setIsSubmitting(true);
+        setStatus({ success: null, message: "" });
+
+        try {
+        const res = await fetch(`${API_URL}/contact`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formDetails),
+        });
+
+        const result = await res.json().catch(() => ({}));
+
+        if (res.ok && result.code === 200) {
+            setStatus({ success: true, message: "Message sent successfully" });
+            setFormDetails(formInitialDetails); // reset only on success
+        } else {
+            setStatus({
+            success: false,
+            message: result?.status || "Something went wrong, please try again later.",
+            });
+        }
+        } catch {
+        setStatus({
+            success: false,
+            message: "Network error. Please check your connection and try again.",
+        });
+        } finally {
+        setIsSubmitting(false);
+        }
     };
 
     return (
@@ -116,11 +149,11 @@ export const ContactSection = () => {
                     {/* --------------------------
                         Right Column: Contact Form
                     -------------------------- */}
-                    <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+                    <div className="bg-card p-8 rounded-lg shadow-xs">
                         <h3 className="text-2xl font-semibold mb-6">Send a message</h3>
 
                         {/* Form */}
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             
                             {/* Name field */}
                             <div>
@@ -129,6 +162,8 @@ export const ContactSection = () => {
                                     type="text" 
                                     id="name" 
                                     name="name" 
+                                    value={formDetails.name}
+                                    onChange={(e) => onFormUpdate('name', e.target.value)}
                                     required 
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                                     placeholder="Maria Zapata..."
@@ -142,6 +177,8 @@ export const ContactSection = () => {
                                     type="email" 
                                     id="email" 
                                     name="email" 
+                                    value={formDetails.email}
+                                    onChange={(e) => onFormUpdate('email', e.target.value)} 
                                     required 
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
                                     placeholder="john@gmail.com"
@@ -155,6 +192,8 @@ export const ContactSection = () => {
                                     id="message" 
                                     name="message" 
                                     required 
+                                    value={formDetails.message}
+                                    onChange={(e) => onFormUpdate('message', e.target.value)}
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
                                     placeholder="Hello, I'd like to talk about..."
                                 />
@@ -170,6 +209,16 @@ export const ContactSection = () => {
                                 <Send size={16}/> 
                             </button>
                         </form>
+                        {/* Feedback message */}
+                        {status.message && (
+                            <p
+                            className={`mt-4 text-sm ${
+                                status.success ? "text-green-600" : "text-red-600"
+                            }`}
+                            >
+                            {status.message}
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>
