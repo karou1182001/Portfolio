@@ -35,10 +35,10 @@ export const ContactSection =()=>{
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Mail className="h-6 w-6 text-primary"/> {" "}
                             </div>
-                            <div>
-                                <h4 className="font-medium">Email</h4>
+                            <div className="text-left">
+                                <h4 className="font-medium">mariazapatamontano@gmail.com</h4>
                                 <a href="mailto:mariazapatamontano@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                                    mariazapatamontano@gmail.com
+                                    Send an email
                                 </a>
                             </div>
                         </div>
@@ -47,10 +47,11 @@ export const ContactSection =()=>{
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Phone className="h-6 w-6 text-primary"/> {" "}
                             </div>
-                            <div>
-                                <h4 className="font-medium">Phone</h4>
+                            
+                            <div className="text-left">
+                                <h4 className="font-medium">+1 (656) 212-9497</h4>
                                 <a href="tel:+16562129497" className="text-muted-foreground hover:text-primary transition-colors">
-                                    +1 (656) 212-9497
+                                   Send a text
                                 </a>
                             </div>
                         </div>
@@ -59,7 +60,7 @@ export const ContactSection =()=>{
                             <div className="p-3 rounded-full bg-primary/10">
                                 <MapPin className="h-6 w-6 text-primary"/> {" "}
                             </div>
-                            <div>
+                            <div className="text-left">
                                 <h4 className="font-medium">Location</h4>
                                 <a  className="text-muted-foreground hover:text-primary transition-colors">
                                     United States
