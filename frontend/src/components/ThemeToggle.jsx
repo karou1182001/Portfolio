@@ -19,11 +19,11 @@ useEffect(() => {
     // If user had dark mode saved previously
     setIsDarkMode(true);
     document.documentElement.classList.add("dark");
-  } else if (storedTheme === "light") {
-    // If user had light mode saved previously
-    setIsDarkMode(false);
-    document.documentElement.classList.remove("dark");
-  } else {
+  // } else if (storedTheme === "light") {
+  //   // If user had light mode saved previously
+  //   setIsDarkMode(false);
+  //   document.documentElement.classList.remove("dark");
+  // } else {
     // Default to dark mode if nothing saved
     localStorage.setItem("theme", "dark");
     setIsDarkMode(true);
