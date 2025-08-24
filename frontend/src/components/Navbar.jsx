@@ -14,9 +14,9 @@ const navItems = [
 ];
 
 // -----------------------------------------------------------------------------
-// Navbar
+// NavBar
 // -----------------------------------------------------------------------------
-export const Navbar = () => {
+export const NavBar = () => {
   // Visual state: compact header after scrolling
   const [isScrolled, setIsScrolled] = useState(false);
   // UI state: mobile menu open/close
