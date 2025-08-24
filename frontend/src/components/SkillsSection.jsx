@@ -2,36 +2,59 @@ import { useEffect, useState } from "react";
 import {cn} from '@/lib/utils';
 
 
-const skills = [
+ const skills = [
   // ======================
   // Frontend Skills
   // ======================
-  { name: "HTML/CSS", level: 95, category: "frontend" },
+  { name: "HTML/CSS", level: 90, category: "frontend" },
   { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
+    { name: "ReactJS", level: 95, category: "frontend" },
   { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  { name: "React Native", level: 80, category: "frontend" },
+  { name: "Flutter", level: 85, category: "frontend" },
+  { name: "Svelte", level: 70, category: "frontend" },
+  { name: "TailwindCSS", level: 80, category: "frontend" },
+  { name: "Bootstrap", level: 80, category: "frontend" },
 
   // ======================
   // Backend Skills
   // ======================
+  { name: "Python", level: 90, category: "backend" },
+  { name: "Java", level: 85, category: "backend" },
+  { name: "C# / .NET", level: 75, category: "backend" },
+  { name: "C / C++", level: 70, category: "backend" },
   { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+  { name: "Express.js", level: 75, category: "backend" },
+  { name: "Flask", level: 80, category: "backend" },
+  { name: "REST API", level: 85, category: "backend" },
+  { name: "SQL", level: 80, category: "backend" },
+  { name: "PostgreSQL", level: 75, category: "backend" },
+  { name: "NoSQL (MongoDB)", level: 70, category: "backend" },
 
   // ======================
-  // Tools
+  // AI & Data
   // ======================
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
+  { name: "Python for AI/ML", level: 90, category: "AI" },
+  { name: "LLMs (Large Language Models)", level: 85, category: "AI" },
+  { name: "Prompt Engineering", level: 85, category: "AI" },
+  { name: "AI Agents (Multi-Agent Systems)", level: 80, category: "AI" },
+  { name: "Retrieval-Augmented Generation (RAG)", level: 80, category: "AI" },
+  { name: "Natural Language Processing (NLP)", level: 80, category: "AI" },
+  { name: "Machine Learning (General)", level: 75, category: "AI" },
+
+  // ======================
+  // Tools & DevOps
+  // ======================
+  { name: "Git/GitHub", level: 95, category: "tools" },
+  { name: "Docker", level: 60, category: "tools" },
+  { name: "AWS", level: 65, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
+  { name: "Bloomberg Terminal", level: 50, category: "tools" },
+  { name: "Augmented Reality (Unity + Vuforia)", level: 65, category: "tools" },
+
 ];
 
-const categories= ["all", "frontend", "backend", "tools"]
+const categories= ["all", "frontend", "backend", "AI", "tools"]
 
 export const SkillSection = () => {
     const [activeCategory, setActiveCategory]=useState("all")

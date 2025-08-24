@@ -68,7 +68,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">AI Engineer</h4>
                   <p className="text-muted-foreground">
-                    Build AI systems that automate tasks and solve real problems
+                    Build AI systems that automate tasks and solve real problems.
                   </p>
                 </div>
               </div>
