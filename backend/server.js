@@ -15,9 +15,29 @@ const app = express();
 app.use(helmet());
 
 // 4b) CORS: allow requests from frontend (adjust origin if needed)
-app.use(cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:5173",
-}));
+const raw = process.env.CORS_ORIGIN || "http://localhost:5173";
+const allowedOrigins = raw
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean)
+  .map(s => s.replace(/\/$/, "")); // quita slash final
+
+const corsOptions = {
+  origin: (origin, cb) => {
+    // requests sin origin (curl, health checks)
+    if (!origin) return cb(null, true);
+    const normalized = origin.replace(/\/$/, "");
+    if (allowedOrigins.includes(normalized)) return cb(null, true);
+    return cb(new Error("Not allowed by CORS: " + origin));
+  },
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false, // pon true solo si usas cookies
+};
+
+app.use(cors(corsOptions));
+// Preflight explícito por si acaso
+app.options("*", cors(corsOptions));
 
 // 4c) Parse JSON body
 app.use(express.json());
