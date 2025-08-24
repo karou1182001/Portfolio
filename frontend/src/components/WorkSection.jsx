@@ -1,6 +1,6 @@
-import { Code, User, Briefcase } from "lucide-react";
 import appleLogo from "../assets/apple_logo.png";
 import advocateLogo from "../assets/advocate.jpg"
+import { User } from "lucide-react";
 
 // -----------------------------------------------------------------------------
 // WorkSection
@@ -21,13 +21,13 @@ export const WorkSection = () => {
         {/* Card: Apple Internship */}
             <div className="bg-card p-6 rounded-lg shadow-xs card-hover">
                 <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 overflow-hidden flex items-center justify-center">
-            <img 
-                src={appleLogo} 
-                alt="Apple Logo" 
-                className="h-full w-full object-cover"
-            />
-            </div>
+                <div className="shrink-0 aspect-square size-12 sm:size-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                <img
+                    src={appleLogo}
+                    alt="Apple Logo"
+                    className="max-w-full max-h-full object-contain"
+                />
+                </div>
 
                 <div className="text-left">
                     <h4 className="font-semibold text-lg">Apple - Full Stack AI Intern</h4>
@@ -56,13 +56,15 @@ export const WorkSection = () => {
             {/* Card: Advocate Health Advisors */}
             <div className="bg-card p-6 rounded-lg shadow-xs card-hover">
                 <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-full bg-primary/10 overflow-hidden flex items-center justify-center">
-                <img 
-                    src={advocateLogo} 
-                    alt="Advocate Logo" 
-                    className="h-full w-full object-cover"
+                <div className="shrink-0 aspect-square size-12 sm:size-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                <img
+                    src={advocateLogo}
+                    alt="Advocate Logo"
+                    className="max-w-full max-h-full object-contain"
                 />
                 </div>
+
+
                 <div className="text-left">
                     <h4 className="font-semibold text-lg">Advocate Health Advisors - Full Stack Developer</h4>
                     {/* <p className="text-sm text-muted-foreground">Aug 2023 – Jul 2024</p> */}
