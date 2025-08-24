@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { useState } from "react";
 // React hook to manage component state
 
-const API_URL = "http://localhost:5000";
+const API_URL = VITE_API_UR || "http://localhost:5000";
 
 export const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
