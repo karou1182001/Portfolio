@@ -90,3 +90,6 @@ npm run dev
 Visit: http://localhost:5173
 
 https://www.youtube.com/watch?v=ifOJ0R5UQOc
+
+Icons made by [Flaticon](https://www.flaticon.com/).
+

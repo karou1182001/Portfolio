@@ -25,20 +25,18 @@ export const AboutSection = () => {
           ====================== */}
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              AI Software Engineer and Speaker
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
-            </p>
+            Awarded <span className="text-primary font-semibold">Best Engineering Graduate in Colombia (2023)</span>.<br/>
+            <strong> Triple major</strong> with <strong>dual Summa Cum Laude honors</strong>, experienced building end-to-end mobile apps for companies, 
+            and <strong>AI full-stack development</strong> at <span className="bg-purple-300 text-black px-1">Apple</span>.  
+          </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving
-              web landscape.
+              I love solving problems that bring real change.  
+              Outside coding, <br/>you’ll find me speaking on stage… or dancing to Latin music. 
             </p>
 
             {/* Calls to Action */}
@@ -65,12 +63,12 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
+                  <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Web Developer</h4>
+                  <h4 className="font-semibold text-lg">AI Engineer</h4>
                   <p className="text-muted-foreground">
-                    Create responsive websites and ship performant, modern UIs.
+                    Build AI systems that automate tasks and solve real problems
                   </p>
                 </div>
               </div>
@@ -80,12 +78,12 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
+                  <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">Full Stack Development</h4>
                   <p className="text-muted-foreground">
-                    Design accessible interfaces with thoughtful interactions.
+                    Create complete apps, from backend to modern UIs.
                   </p>
                 </div>
               </div>
@@ -98,9 +96,9 @@ export const AboutSection = () => {
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
+                  <h4 className="font-semibold text-lg">Public Speaking</h4>
                   <p className="text-muted-foreground">
-                    Plan, prioritize, and deliver features end-to-end.
+                    Share my story to inspire others to chase their dreams.
                   </p>
                 </div>
               </div>
