@@ -45,7 +45,7 @@ export const HeroSection = () => {
           <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-center space-y-2 opacity-0 animate-fade-in-delay-3">
           
           <p> AI Software Engineer</p>
-          <p class="italic">✨Be your own fairy godmother — that’s my motto.✨</p>
+          <p class="italic">✨Be your own fairy godmother✨</p>
         </div>
         
            

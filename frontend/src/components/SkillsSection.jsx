@@ -57,7 +57,7 @@ import {cn} from '@/lib/utils';
 const categories= ["all", "frontend", "backend", "AI", "tools"]
 
 export const SkillSection = () => {
-    const [activeCategory, setActiveCategory]=useState("all")
+    const [activeCategory, setActiveCategory]=useState("AI")
     const filteredSkills= skills.filter((skill)=> activeCategory==="all" || skill.category===activeCategory);
 
 

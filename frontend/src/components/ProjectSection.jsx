@@ -48,8 +48,7 @@ export const ProjectSection = () => {
             </h2>
 
             {/* Short description under the title */}
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Here are some of my recent projects. Each project special
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">\
             </p>
 
             {/* ----------------------
