@@ -17,8 +17,8 @@ const projects = [
     {
         id:2,
         title: "Real Scale Smart House",
-        description: "🏆 1st place project: a smart house controlled by an Android app via Bluetooth, designed to help the elderly and disabled.",
-        image: "/projects/project2.png",
+        description: "🏆 1st place project: a smart house controlled by an Android app via Bluetooth, designed to help people with disabilities.",
+        image: "/projects/smartHouseProject.png",
         tags:["Android", "Arduino", "Bluetooth", "IoT"],
         demoURL: "https://photos.app.goo.gl/eXB8vRWF8BHjzudk6",
         githubURL: "https://github.com/karou1182001/SmartHouse/blob/main/README.md",
@@ -28,7 +28,7 @@ const projects = [
         id:3,
         title: "OttoGame",
         description: "Built in 48h for Global Game Jam 2020 🎮. Play as Otto, a small robot surviving an intergalactic war—so good the crowd chanted its name!",
-        image: "/projects/ARProject.png",
+        image: "/projects/ottoProject.png",
         tags:["Unity", "Global Game Jam", "Teamwork"],
         demoURL: "https://photos.app.goo.gl/9gDtSi2dUGKawbtR8",
         githubURL: "https://github.com/karou1182001/OttoGame",
@@ -43,7 +43,18 @@ const projects = [
         demoURL: "https://drive.google.com/file/d/1Yw07hLMWMkX7oZCyzF6mkarDHmg58CbK/view?usp=sharing",
         githubURL: "https://github.com/karou1182001/AppMovilRU",
         newsURL: "" 
+    },
+    {
+        id:5,
+        title: "Disney Akinator Desktop App",
+        description: "🎮 Java desktop app that guesses Disney characters using a decision tree",
+        image: "/projects/disneyAkinatorProject.png",
+        tags:["Java", "Decision Trees", "Desktop App"],
+        demoURL: "https://photos.app.goo.gl/pGSW7v1cFkZDdY9w5",
+        githubURL: "https://github.com/karou1182001/disneyAkinator",
+        newsURL: "" 
     }
+
 
 ]
 
