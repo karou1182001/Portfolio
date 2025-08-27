@@ -1,15 +1,19 @@
 import { Mail, MapPin, Phone, Linkedin, Instagram, Send } from "lucide-react"; 
 // Importing icons from Lucide React (mail, map, phone, social, send)
-
 import { cn } from '@/lib/utils'; 
 // Utility function (likely merges conditional class names)
-
 import { useState } from "react";
 // React hook to manage component state
+import emailjs from "@emailjs/browser";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+//const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export const ContactSection = () => {
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [status, setStatus] = useState({});
     const formInitialDetails = {
@@ -27,38 +31,55 @@ export const ContactSection = () => {
   }
 
     // Handle form submission
-    const handleSubmit = async (e) => {
+    const handleSubmit =  async (e) => {
         e.preventDefault();
         if (isSubmitting) return;
         setIsSubmitting(true);
         setStatus({ success: null, message: "" });
 
+        
         try {
-        const res = await fetch(`${API_URL}/contact`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formDetails),
-        });
-
-        const result = await res.json().catch(() => ({}));
-
-        if (res.ok && result.code === 200) {
-            setStatus({ success: true, message: "Message sent successfully" });
-            setFormDetails(formInitialDetails); // reset only on success
-        } else {
-            setStatus({
-            success: false,
-            message: result?.status || "Something went wrong, please try again later.",
-            });
-        }
-        } catch {
+        await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.currentTarget, { publicKey: PUBLIC_KEY });
+            setStatus({ success: true, message: "Message sent successfully." });
+            setFormDetails(formInitialDetails);
+            e.currentTarget.reset(); 
+        } catch (err) {
         setStatus({
             success: false,
-            message: "Network error. Please check your connection and try again.",
+            message: result?.status || "Something went wrong, please try again later.",
         });
         } finally {
-        setIsSubmitting(false);
+            setIsSubmitting(false);
         }
+
+
+
+        // try {
+        // const res = await fetch(`${API_URL}/contact`, {
+        //     method: "POST",
+        //     headers: { "Content-Type": "application/json" },
+        //     body: JSON.stringify(formDetails),
+        // });
+
+        // const result = await res.json().catch(() => ({}));
+
+        // if (res.ok && result.code === 200) {
+        //     setStatus({ success: true, message: "Message sent successfully" });
+        //     setFormDetails(formInitialDetails); // reset only on success
+        // } else {
+        //     setStatus({
+        //     success: false,
+        //     message: result?.status || "Something went wrong, please try again later.",
+        //     });
+        // }
+        // } catch {
+        // setStatus({
+        //     success: false,
+        //     message: "Network error. Please check your connection and try again.",
+        // });
+        // } finally {
+        // setIsSubmitting(false);
+        // }
     };
 
     return (
@@ -166,7 +187,7 @@ export const ContactSection = () => {
                                     onChange={(e) => onFormUpdate('name', e.target.value)}
                                     required 
                                     className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                    placeholder="Maria Zapata..."
+                                    placeholder="John..."
                                 />
                             </div>
 
