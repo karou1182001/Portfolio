@@ -186,11 +186,3 @@
 .news-video-swiper .swiper-button-prev:hover {
   color: hsl(var(--primary) / 0.85);
 }
-
-/* Hide arrow in phone */
-/* @media (max-width: 767px) {
-  .news-video-swiper .swiper-button-next,
-  .news-video-swiper .swiper-button-prev {
-    display: none;
-  }
-} */

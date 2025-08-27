@@ -31,10 +31,14 @@ export function VideoCarousel() {
           {/* 16:9 responsive wrapper */}
           <div className="relative w-full max-w-md mx-auto overflow-hidden rounded-xl shadow" style={{ aspectRatio: "16/9" }}>
             <video
-              src={v.src}
-              className="absolute inset-0 w-full h-full object-cover"
-              controls
-              playsInline
+            src={v.src}
+            preload="metadata"
+            className="absolute inset-0 w-full h-full object-cover"
+            muted                         // required for autoplay on mobile
+            autoPlay
+            loop
+            playsInline
+            controls                      
             />
           </div>
 
