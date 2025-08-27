@@ -1,7 +1,7 @@
-# Portfolio – React + Vite + Tailwind + Express/Nodemailer
+# Portfolio – React + Vite + Tailwind + EmailJS
 
-This project is a **personal portfolio** built with **React (Vite) + Tailwind CSS** on the frontend and an **Express server** in Node.js that sends emails with **Nodemailer**.  
-It includes **Helmet** (security headers), **express-rate-limit** (anti-spam), **CORS**, and **dotenv** for environment variables.
+This project is a **personal portfolio** built with **React (Vite) + Tailwind CSS** on the frontend and an **Express server** in Node.js that sends emails with **Nodemailer** and EmailJS (both options available in portfolio).  
+It includes  **dotenv** for environment variables.
 
 ---
 
@@ -11,8 +11,12 @@ It includes **Helmet** (security headers), **express-rate-limit** (anti-spam), *
 - React + Vite
 - Tailwind CSS (v4)
 - lucide-react (icons)
+- EmailJS (@emailjs/browser)
 
-**Backend**
+Infrastructure
+- Vercel (deploy & hosting)
+
+**Backend** (Optional, but included in the repo. In the end, I switched to EmailJS.)
 - Node.js + Express
 - Nodemailer (SMTP Gmail with App Password)
 - Helmet (security headers)
@@ -24,13 +28,15 @@ It includes **Helmet** (security headers), **express-rate-limit** (anti-spam), *
 
 ## 📁 Project Structure
 
+```bash
 ├─ frontend/ # Vite/React/Tailwind app
-│ ├─ src/
+│ ├─ src/ #All components
 │ ├─ index.html
-│ └─ .env.local # VITE_API_URL
+│ └─ .env.local # VITE_API_URL and emailJS
 └─ server/ # Express API
 ├─ server.js # (ESM with import)
 └─ .env # EMAIL_* / CORS_ORIGIN / PORT
+```
 
 ## 🔧 Setup
 
@@ -58,10 +64,19 @@ Copy the 16-character code (without spaces) into EMAIL_PASS.
 
 2) Frontend environment variables (frontend/.env.local)
 
+# EmailJS (public by design, but keep them in .env for cleanliness)
+```bash
+VITE_EMAILJS_SERVICE_ID=service_xxxxxxx
+VITE_EMAILJS_TEMPLATE_ID=template_xxxxxxx
+VITE_EMAILJS_PUBLIC_KEY=xxxxxxxxxxxxxxxxx
+```
 
-VITE_API_URL=http://localhost:5000
-In production, change VITE_API_URL to your deployed backend URL.
-
+Usage in code:
+```bash
+const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+```
 
 ▶️ Running locally
 Backend
@@ -85,11 +100,13 @@ Frontend
 cd frontend
 npm install
 npm run dev
-
-
 Visit: http://localhost:5173
 
-https://www.youtube.com/watch?v=ifOJ0R5UQOc
+## Credits: 
 
 Icons made by [Flaticon](https://www.flaticon.com/).
+
+
+
+
 
