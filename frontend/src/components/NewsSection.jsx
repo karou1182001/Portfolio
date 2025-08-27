@@ -14,7 +14,7 @@ const newsItems = [
   {
     id: 2,
     title: "Best engineering graduate in Colombia 2023!",
-    description: "USF featured my recognition as the Best engineering graduate in Colombia 2023 by the Colombian Society of Engineers. Full article (in Spanish) available on the USF site.",
+    description: "USF featured my recognition as the Best engineering graduate in Colombia 2023 by the Colombian Society of Engineers.",
     image: "/news/linoPomboAward.png",  
     link: "https://www.usf.edu/engineering/news/2024/cse/maria.aspx"
   },
@@ -24,8 +24,14 @@ const newsItems = [
     description: "Featured by Universidad del Norte for completing three degrees: Summa Cum Laude in Software Engineering and Mathematics in Colombia, plus a Computer Science degree in the United States.",
     image: "/news/summaStudent.jpg",
     link: "https://www.uninorte.edu.co/web/grupo-prensa/w/sociedad-colombiana-de-ingenieros-premia-a-egresada-de-sistemas/13400067"
+  },
+  {
+    id: 4,
+    title: "Highlighted as a Student of Exceptional Talents by my High School",
+    description: "El Heraldo featured students in a news article on exceptional talents, highlighting those recognized as prodigious by the high school IDPHU.",
+    image: "/news/idphu.png",
+    link: "https://www.elheraldo.co/tendencias/2017/11/06/la-educacion-para-talentos-excepcionales/"
   }
-
 ];
 
 // -----------------------------------------------------------------------------
