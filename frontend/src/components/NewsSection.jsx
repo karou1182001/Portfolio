@@ -52,6 +52,18 @@ export const NewsSection = () => {
           <VideoCarousel/>
         </div>
 
+        {/* Visual divisor */}
+        <div className="relative mb-16">
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
+          <span
+            className="absolute left-1/2 -translate-x-1/2 -top-3 
+                      text-xs px-4 py-1 rounded-full bg-background 
+                      text-foreground/70 border border-foreground/10 shadow-sm"
+          >
+            Press Coverage
+          </span>
+        </div>
+
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {newsItems.map((news) => (
