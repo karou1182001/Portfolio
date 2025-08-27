@@ -7,7 +7,7 @@ import { User } from "lucide-react";
 // -----------------------------------------------------------------------------
 export const WorkSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="work" className="py-24 px-4 relative">
       {/* ======================
           Container & Section Title
       ====================== */}
