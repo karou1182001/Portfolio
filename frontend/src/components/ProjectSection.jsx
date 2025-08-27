@@ -4,18 +4,8 @@ import { ExternalLink, Github, ArrowRight, Newspaper } from "lucide-react";
 // Projects Data
 // -----------------------------------------------------------------------------
 const projects = [
-   {
-        id:1,
-        title: "AR Museum",
-        description: "AR museum app built in Unity 🏛️. Point your device at exhibits and unlock immersive 3D experiences.",
-        image: "/projects/ARProject.png",
-        tags:["Unity", "Augmented Reality"],
-        demoURL: "https://youtu.be/hCuxN-WTXbs?si=ihDmxhcP4N2zKgA1",
-        githubURL: "https://github.com/karou1182001/ARFinalProject/tree/main",
-        newsURL: "" // no official press article published
-    },
     {
-        id:2,
+        id:1,
         title: "Real Scale Smart House",
         description: "🏆 1st place project: a smart house controlled by an Android app via Bluetooth, designed to help people with disabilities.",
         image: "/projects/smartHouseProject.png",
@@ -24,8 +14,8 @@ const projects = [
         githubURL: "https://github.com/karou1182001/SmartHouse/blob/main/README.md",
         newsURL: "https://www.uninorte.edu.co/web/grupo-prensa/w/los-proyectos-galardonados-de-la-septima-edicion-de-geo-expo-fisica"
     },
-    {
-        id:3,
+   {
+        id:2,
         title: "OttoGame",
         description: "Built in 48h for Global Game Jam 2020 🎮. Play as Otto, a small robot surviving an intergalactic war—so good the crowd chanted its name!",
         image: "/projects/ottoProject.png",
@@ -35,7 +25,7 @@ const projects = [
         newsURL: "https://www.atlantico.gov.co/index.php/noticias/prensa-tic/12876-seguiremos-impulsando-a-los-jovenes-y-la-a-industria-de-videojuegos-en-el-atlantico-elsa-noguera"
     },
     {
-        id:4,
+        id:3,
         title: "RU? – Social App",
         description: "📱 Flutter + Firebase mobile app that helps university students discover events, connect with peers",
         image: "/projects/ruproject.png",
@@ -44,6 +34,18 @@ const projects = [
         githubURL: "https://github.com/karou1182001/AppMovilRU",
         newsURL: "" 
     },
+   {
+        id:4,
+        title: "AR Museum",
+        description: "AR museum app built in Unity 🏛️. Point your device at exhibits and unlock immersive 3D experiences.",
+        image: "/projects/ARProject.png",
+        tags:["Unity", "Augmented Reality"],
+        demoURL: "https://youtu.be/hCuxN-WTXbs?si=ihDmxhcP4N2zKgA1",
+        githubURL: "https://github.com/karou1182001/ARFinalProject/tree/main",
+        newsURL: "" // no official press article published
+    },
+    
+    
     {
         id:5,
         title: "Disney Akinator Desktop App",
@@ -53,7 +55,39 @@ const projects = [
         demoURL: "https://photos.app.goo.gl/pGSW7v1cFkZDdY9w5",
         githubURL: "https://github.com/karou1182001/disneyAkinator",
         newsURL: "" 
-    }
+    },
+    {
+        id:6,
+        title: "ServiDrink Website",
+        description: "🍹 Full-stack PERN app where users can search drinks, explore restaurants, rate products, save favorites, and block venues.",
+        image: "/projects/serviDrinkProject.png",
+        tags:["PostgreSQL", "Express", "React", "Node.js"],
+        demoURL: "", // si subes un demo en Vercel, Render o similar, pones aquí el link
+        githubURL: "https://github.com/karou1182001/ServiDrinkDataBaseFinalProj",
+        newsURL: "" // vacío a menos que haya nota de prensa
+    },
+    {
+        id:7,
+        title: "Thesis: Augmented Reality App for HCI",
+        description: "📱 Ongoing research project exploring augmented reality and gesture-based interactions for Human–Computer Interaction. Soon a prototype and demo will be shared. You can learn more about the lab here.",
+        image: "/projects/thesisProject.jpg",
+        tags:["Augmented Reality", "Unity", "Gesture Recognition", "Research"],
+        demoURL: "https://encoderesearchlab.org/",
+        githubURL: "", 
+        newsURL: ""   
+    },
+    // {
+    //     id:8,
+    //     title: "Digital Forms App",
+    //     description: "📝 Flutter + Firebase application that digitizes company processes by converting paper forms into online forms while still generating signed PDF documents for compliance.",
+    //     image: "/projects/digFormsProject.jpeg",
+    //     tags:["Flutter", "Firebase", "PDF Generation", "Digital Signatures"],
+    //     demoURL: "",
+    //     githubURL: "https://github.com/karou1182001/proelectricosProy", 
+    //     newsURL: ""   
+    // }
+
+
 
 
 ]
@@ -70,7 +104,7 @@ export const ProjectSection = () => {
                     Featured <span className="text-primary">Projects</span>
                 </h2>
 
-                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"></p>
+                <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">My recent projects. Hope you enjoy them as much as I did working on them.</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, key) => (
@@ -102,8 +136,12 @@ export const ProjectSection = () => {
                                 {/* Links */}
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-3">
-                                        <a href={project.demoURL} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300"><ExternalLink size={20}/></a>
-                                        <a href={project.githubURL} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300"><Github size={20}/></a>
+                                        {project.demoURL && (
+                                            <a href={project.demoURL} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300"><ExternalLink size={20}/></a>
+                                        )}
+                                        {project.githubURL && (
+                                            <a href={project.githubURL} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300"><Github size={20}/></a>
+                                        )}
                                         {project.newsURL && (
                                             <a href={project.newsURL} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300"><Newspaper size={20}/></a>
                                         )}
