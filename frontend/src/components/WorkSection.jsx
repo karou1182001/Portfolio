@@ -1,5 +1,5 @@
-import appleLogo from "../assets/apple_logo.png";
-import advocateLogo from "../assets/advocate.jpg"
+import appleLogo from "/work/apple_logo.png";
+import advocateLogo from "/work/advocate.jpg"
 import { User } from "lucide-react";
 
 // -----------------------------------------------------------------------------

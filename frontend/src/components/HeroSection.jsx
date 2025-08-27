@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import headerImg from "../assets/memoji.png";
+import headerImg from "/hero/memoji.png";
 
 // ==========================
 // Hero Section Component
