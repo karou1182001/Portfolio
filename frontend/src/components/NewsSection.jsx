@@ -19,12 +19,13 @@ const newsItems = [
     link: "https://www.usf.edu/engineering/news/2024/cse/maria.aspx"
   },
   {
-    id:3,
-    title: "🎮 OttoGame at Global Game Jam",
-    description: "Covered by Atlántico press for the success of our indie game Otto at Global Game Jam 2020.",
-    image: "/news/ottoNews.png",
-    link: "https://www.atlantico.gov.co/index.php/noticias/prensa-tic/12876-seguiremos-impulsando-a-los-jovenes-y-la-a-industria-de-videojuegos-en-el-atlantico-elsa-noguera"
+    id: 3,
+    title: "Triple Major — x2 Summa Cum Laude Student",
+    description: "Featured by Universidad del Norte for completing three degrees: Summa Cum Laude in Software Engineering and Mathematics in Colombia, plus a Computer Science degree in the United States.",
+    image: "/news/summaStudent.jpg",
+    link: "https://www.uninorte.edu.co/web/grupo-prensa/w/sociedad-colombiana-de-ingenieros-premia-a-egresada-de-sistemas/13400067"
   }
+
 ];
 
 // -----------------------------------------------------------------------------
@@ -39,7 +40,6 @@ export const NewsSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          A few highlights where my work and projects have been featured in the news.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -70,17 +70,6 @@ export const NewsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12 ">
-          <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
-            target="_blank"
-            href="https://www.uninorte.edu.co/web/grupo-prensa"
-          >
-            See More News <ArrowRight size={16} />
-          </a>
         </div>
       </div>
     </section>
