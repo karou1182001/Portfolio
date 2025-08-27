@@ -1,4 +1,5 @@
 import { Newspaper, ArrowRight } from "lucide-react";
+import { VideoCarousel } from "./VideoCarousel";
 
 // -----------------------------------------------------------------------------
 // News Data
@@ -33,7 +34,6 @@ const newsItems = [
     link: "https://www.elheraldo.co/tendencias/2017/11/06/la-educacion-para-talentos-excepcionales/"
   }
 ];
-
 // -----------------------------------------------------------------------------
 // NewsSection Component
 // -----------------------------------------------------------------------------
@@ -44,14 +44,21 @@ export const NewsSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           Media <span className="text-primary">Coverage</span>
         </h2>
-
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          A selection of highlights where my journey and projects have been featured in the press.
         </p>
+        {/* Video Carousel */}
+        <div className="mb-12">
+          <VideoCarousel/>
+        </div>
 
+        {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {newsItems.map((news) => (
-            <div key={news.id} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
-              
+            <div
+              key={news.id}
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+            >
               {/* Cover Image */}
               <div className="h-48 overflow-hidden">
                 <img
@@ -64,14 +71,16 @@ export const NewsSection = () => {
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{news.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{news.description}</p>
+                <p className="text-muted-foreground text-sm mb-4">
+                  {news.description}
+                </p>
                 <a
                   href={news.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-foreground/80 hover:text-primary transition-colors duration-300"
                 >
-                  <Newspaper size={18} className="mr-2"/> Read Article
+                  <Newspaper size={18} className="mr-2" /> Read Article
                 </a>
               </div>
             </div>
