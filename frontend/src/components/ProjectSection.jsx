@@ -27,7 +27,7 @@ const projects = [
     {
         id:3,
         title: "RU? – Social App",
-        description: "📱 Flutter + Firebase mobile app that helps university students discover events, connect with peers",
+        description: "📱 Flutter + Firebase mobile app that helps university students discover events, connect with peers.",
         image: "/projects/ruproject.png",
         tags:["Flutter", "Firebase", "Google Maps API", "Full-Stack"],
         demoURL: "https://drive.google.com/file/d/1Yw07hLMWMkX7oZCyzF6mkarDHmg58CbK/view?usp=sharing",
@@ -49,7 +49,7 @@ const projects = [
     {
         id:5,
         title: "Disney Akinator Desktop App",
-        description: "🎮 Java desktop app that guesses Disney characters using a decision tree",
+        description: "🎮 Java desktop app that guesses Disney characters using a decision tree.",
         image: "/projects/disneyAkinatorProject.png",
         tags:["Java", "Decision Trees", "Desktop App"],
         demoURL: "https://photos.app.goo.gl/pGSW7v1cFkZDdY9w5",
