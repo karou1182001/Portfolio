@@ -126,7 +126,7 @@ export const ContactSection = () => {
                         </div>
 
                         {/* Phone block */}
-                        <div className="flex items-start space-x-4">
+                        {/* <div className="flex items-start space-x-4">
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Phone className="h-6 w-6 text-primary"/> 
                             </div>
@@ -137,7 +137,7 @@ export const ContactSection = () => {
                                    Text
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                 
                         {/* Location block */}
                         <div className="flex items-start space-x-4">
