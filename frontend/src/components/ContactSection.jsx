@@ -124,20 +124,6 @@ export const ContactSection = () => {
                                 </a>
                             </div>
                         </div>
-
-                        {/* Phone block */}
-                        {/* <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Phone className="h-6 w-6 text-primary"/> 
-                            </div>
-                            <div className="text-left">
-                                <h4 className="font-medium">+1 (656) 212-9497</h4>
-                                <a href="tel:+16562129497" 
-                                   className="text-muted-foreground hover:text-primary transition-colors">
-                                   Text
-                                </a>
-                            </div>
-                        </div> */}
                 
                         {/* Location block */}
                         <div className="flex items-start space-x-4">
