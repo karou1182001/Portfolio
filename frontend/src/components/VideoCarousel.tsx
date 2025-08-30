@@ -24,7 +24,7 @@ export function VideoCarousel() {
       navigation
       pagination={{ clickable: true }}
       loop={false}
-      style={{ paddingBottom: 30 }}
+      style={{ paddingBottom: 25 }}
     >
       {videos.map((v, i) => (
         <SwiperSlide key={i}>
@@ -43,7 +43,7 @@ export function VideoCarousel() {
           </div>
 
           {/* Caption */}
-          <p className="mt-2 text-center text-sm text-muted-foreground">
+          <p className="text-center text-sm text-muted-foreground">
             {v.title}
           </p>
         </SwiperSlide>

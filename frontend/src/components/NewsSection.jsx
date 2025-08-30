@@ -47,22 +47,6 @@ export const NewsSection = () => {
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           A selection of highlights where my journey and projects have been featured in the press.
         </p>
-        {/* Video Carousel */}
-        <div className="mb-12">
-          <VideoCarousel/>
-        </div>
-
-        {/* Visual divisor */}
-        <div className="relative mb-16">
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
-          <span
-            className="absolute left-1/2 -translate-x-1/2 -top-3 
-                      text-xs px-4 py-1 rounded-full bg-background 
-                      text-foreground/70 border border-foreground/10 shadow-sm"
-          >
-            Press Coverage
-          </span>
-        </div>
 
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

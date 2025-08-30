@@ -1,4 +1,5 @@
 import { Code, User, Briefcase } from "lucide-react";
+import { VideoCarousel } from "./VideoCarousel";
 
 // -----------------------------------------------------------------------------
 // AboutSection
@@ -13,6 +14,23 @@ export const AboutSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           About <span className="text-primary">Me</span>
         </h2>
+
+        {/* Video Carousel */}
+       <div className="mb-2">
+         <VideoCarousel/>
+       </div>
+
+       {/* Visual divisor */}
+       <div className="relative mb-3">
+         <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
+         <span
+           className="absolute left-1/2 -translate-x-1/2 -top-3 
+                     text-xs px-4 py-1 rounded-full bg-background 
+                     text-foreground/70 border border-foreground/10 shadow-sm"
+         >
+           
+         </span>
+       </div>
 
         {/* ======================
             Two-Column Grid
@@ -83,7 +101,7 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Full Stack Development</h4>
                   <p className="text-muted-foreground">
-                    Create complete apps, from backend to modern UIs.
+                    From backend to modern UIs.
                   </p>
                 </div>
               </div>
