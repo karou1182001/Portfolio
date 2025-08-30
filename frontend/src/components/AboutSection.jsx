@@ -16,12 +16,12 @@ export const AboutSection = () => {
         </h2>
 
         {/* Video Carousel */}
-       <div className="mb-2">
+       <div className="mb-5">
          <VideoCarousel/>
        </div>
 
        {/* Visual divisor */}
-       <div className="relative mb-3">
+       <div className="relative mb-5">
          <div className="h-px w-full bg-gradient-to-r from-transparent via-foreground/30 to-transparent" />
          <span
            className="absolute left-1/2 -translate-x-1/2 -top-3 
