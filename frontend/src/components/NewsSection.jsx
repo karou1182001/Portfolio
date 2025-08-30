@@ -42,7 +42,7 @@ export const NewsSection = () => {
     <section id="news" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Media <span className="text-primary">Coverage</span>
+          Awards & <span className="text-primary">Recognition</span>
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           A selection of highlights where my journey and projects have been featured in the press.
