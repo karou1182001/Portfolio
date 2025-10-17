@@ -79,10 +79,10 @@ const projects = [
     {
         id:8,
         title: "Augmented Reality Business Card",
-        description: "📱SCAN IT. Scan it to see the magic of AR",
+        description: "📱SCAN IT. If you need a better resolution of the picture, click the link",
         image: "/projects/ARBusinessCard.jpeg",
         tags:["Augmented Reality", "Web AR"],
-        demoURL: "",
+        demoURL: "https://www.linkedin.com/posts/mariazapatam_swe25-shpe2025-share-7382897087497129984-JIHr?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWzmU8BvNh9sdpT8UsjPqMou49mxVMf7sU",
         githubURL: "", 
         newsURL: ""   
     },
