@@ -79,7 +79,7 @@ const projects = [
     {
         id:8,
         title: "Augmented Reality Business Card",
-        description: "📱 <strong>SCAN IT</strong><br>If you need a higher-resolution version of the picture, click the link — or zoom in to make the QR code bigger.",
+        description: "📱 SCAN IT. \n If you need a higher-resolution version of the picture, click the link — or zoom in to make the QR code bigger.",
         image: "/projects/ARBusinessCard.jpeg",
         tags:["Augmented Reality", "Web AR"],
         demoURL: "https://www.linkedin.com/posts/mariazapatam_swe25-shpe2025-share-7382897087497129984-JIHr?utm_source=share&utm_medium=member_desktop&rcm=ACoAADWzmU8BvNh9sdpT8UsjPqMou49mxVMf7sU",
