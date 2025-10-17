@@ -81,8 +81,8 @@ const projects = [
         title: "Augmented Reality Business Card",
         description: "📱SCAN IT",
         image: "/projects/ARBusinessCard.jpeg",
-        tags:["Augmented Reality"],
-        demoURL: "",
+        tags:["Augmented Reality", "Web AR"],
+        demoURL: "Scan it to see the magic of AR",
         githubURL: "", 
         newsURL: ""   
     },
