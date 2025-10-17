@@ -76,6 +76,16 @@ const projects = [
         githubURL: "", 
         newsURL: ""   
     },
+    {
+        id:8,
+        title: "Augmented Reality Business Card",
+        description: "📱SCAN IT",
+        image: "/projects/ARBusinessCard.jpeg",
+        tags:["Augmented Reality"],
+        demoURL: "",
+        githubURL: "", 
+        newsURL: ""   
+    },
     // {
     //     id:8,
     //     title: "Digital Forms App",
